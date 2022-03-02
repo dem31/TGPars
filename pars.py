@@ -76,11 +76,11 @@ target_group=groups[int(g_index)]
 print(gr+'[+] Fetching Members...')
 time.sleep(1)
 all_participants = []
-all_participants = client.get_participants(target_group, aggressive=True)
+all_participants = client.get_participants(target_group, aggressive=False)
  
 print(gr+'[+] Saving In file...')
 time.sleep(1)
-with open("members.csv","w",encoding='UTF-8') as f:
+with open("members.csv", "w", encoding='UTF-8') as f:
     writer = csv.writer(f,delimiter=",",lineterminator="\n")
     writer.writerow(['username','user id', 'access hash','name','group', 'group id'])
     for user in all_participants:
